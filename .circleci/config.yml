@@ -1,0 +1,30 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/app
+    docker:
+      - image: node:latest
+    steps:
+      - checkout
+      - run: npm install yarn
+      - restore_cache:
+          key: yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install dependencies
+          command: yarn install
+      - run: 
+          name: Run tests and generate coverage to artifact and generate junit test-results.xml
+          command: ./node_modules/.bin/nyc --reporter=html --reporter=text ./node_modules/.bin/mocha --reporter mocha-junit-reporter --reporter-options mochaFile=./coverage/test-results.xml
+      - save_cache:
+          key: yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - "~/.yarn-cache"
+      - store_artifacts:
+          path: ./coverage/
+          destination: coverage
+      - store_test_results:
+          path: coverage/
+
+# notify:
+#   webhooks:
+#     - url: https://meepshop-workshop.phacility.com/harbormaster/hook/circleci/

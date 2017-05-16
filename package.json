@@ -1,0 +1,19 @@
+{
+  "name": "emapsdk-wrapper",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --harmony ./src/index.js",
+    "test": "nyc mocha",
+    "eslint": "eslint ./src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.19.0",
+    "eslint-plugin-import": "^2.2.0",
+    "mocha": "^3.4.1",
+    "mocha-junit-reporter": "^1.13.0",
+    "nyc": "^10.3.2"
+  }
+}
