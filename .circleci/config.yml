@@ -14,7 +14,7 @@ jobs:
           command: yarn install
       - run: 
           name: Run tests and generate coverage to artifact and generate junit test-results.xml
-          command: ./node_modules/.bin/nyc --reporter=html --reporter=text ./node_modules/.bin/mocha --reporter mocha-junit-reporter --reporter-options mochaFile=./coverage/test-results.xml
+          command: ./node_modules/.bin/nyc --reporter=html --reporter=text ./node_modules/.bin/mocha --timeout=10000 --reporter mocha-junit-reporter --reporter-options mochaFile=./coverage/test-results.xml
       - save_cache:
           key: yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:

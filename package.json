@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha --timeout=10000",
+    "test": "nyc mocha --timeout=5000",
     "test-debug": "DEBUG=emapsdk-wrapper:* nyc mocha --timeout=5000",
     "eslint": "eslint ./lib",
     "cover": "nyc --reporter=html mocha"
