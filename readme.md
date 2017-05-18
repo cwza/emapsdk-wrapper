@@ -1,4 +1,4 @@
-# Emapsdk wrapper for meepshop 
+# Emapsdk wrapper
 
 ## Install
 ``` sh
