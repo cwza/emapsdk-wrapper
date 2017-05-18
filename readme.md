@@ -138,10 +138,18 @@ ew.getStores({city: '台北市', town: '信義區', roadname: '永吉路'})
         ]
         */
     })
+ew.getStores({ID: '162520'})
+    .then(stores => {
+        console.log('stores: ', stores)
+    })
+ew.getStores({StoreName: '中錦'})
+    .then(stores => {
+        console.log('stores: ', stores)
+    })
 ```
 
 ## Usage of mock
-All usage is the same of apis, but this mock is only work at 台北市信義區永吉路, Others will return empty array. It will always return the same value which is pre-defined in this module.
+All usage is the same as apis, but this mock is only work at 台北市信義區永吉路, others will return empty array. It will always return the same value which is pre-defined in this module.
 This mock is useful if you do not want to really fetch the data from emapsdk.
 
 ``` js
@@ -192,3 +200,6 @@ ew.getStores({city: '台北市', town: '信義區', roadname: '永吉路'})
             Console.log(err)
     })
 ```
+
+## More Example
+For more example, please see the [test](test)
