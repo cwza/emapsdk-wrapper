@@ -1,6 +1,7 @@
 {
   "name": "emapsdk-wrapper",
   "version": "0.1.0",
+  "description": "7-11 emapsdk wrapper",
   "main": "index.js",
   "scripts": {
     "test": "nyc mocha --timeout=5000",
@@ -8,6 +9,14 @@
     "eslint": "eslint ./lib",
     "cover": "nyc --reporter=html mocha"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cwza/emapsdk-wrapper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cwza/emapsdk-wrappers/issues"
+  },
+  "author": "cwza",
   "license": "MIT",
   "devDependencies": {
     "babel-eslint": "^7.2.3",
