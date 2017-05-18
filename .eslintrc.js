@@ -8,12 +8,15 @@ module.exports = {
     node: true
   },
 
+  parser: "babel-eslint",
+
   parserOptions: {
     ecmaVersion: 6,
     sourceType: 'module',
     ecmaFeatures: {
       generators: true,
-      experimentalObjectRestSpread: true
+      experimentalObjectRestSpread: true,
+      arrowFunctions: true,
     }
   },
 
