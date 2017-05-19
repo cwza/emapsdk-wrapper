@@ -17,18 +17,20 @@ ew.getTowns('台北市')
     .then(towns => {
         console.log('towns: ', towns)
         /*
-        { TownID: '01', TownName: '松山區', X: '121577218', Y: '25049837' },
-        { TownID: '02', TownName: '信義區', X: '121567161', Y: '25033147' },
-        { TownID: '03', TownName: '大安區', X: '121534593', Y: '25026482' },
-        { TownID: '04', TownName: '中山區', X: '121533655', Y: '25064427' },
-        { TownID: '05', TownName: '中正區', X: '121518245', Y: '25032251' },
-        { TownID: '06', TownName: '大同區', X: '121515830', Y: '25066142' },
-        { TownID: '07', TownName: '萬華區', X: '121499745', Y: '25034807' },
-        { TownID: '08', TownName: '文山區', X: '121570280', Y: '24989800' },
-        { TownID: '09', TownName: '南港區', X: '121607043', Y: '25054684' },
-        { TownID: '10', TownName: '內湖區', X: '121589471', Y: '25069353' },
-        { TownID: '11', TownName: '士林區', X: '121525380', Y: '25090430' },
-        { TownID: '12', TownName: '北投區', X: '121503066', Y: '25132054' } 
+        [
+            { TownID: '01', TownName: '松山區', X: '121577218', Y: '25049837' },
+            { TownID: '02', TownName: '信義區', X: '121567161', Y: '25033147' },
+            { TownID: '03', TownName: '大安區', X: '121534593', Y: '25026482' },
+            { TownID: '04', TownName: '中山區', X: '121533655', Y: '25064427' },
+            { TownID: '05', TownName: '中正區', X: '121518245', Y: '25032251' },
+            { TownID: '06', TownName: '大同區', X: '121515830', Y: '25066142' },
+            { TownID: '07', TownName: '萬華區', X: '121499745', Y: '25034807' },
+            { TownID: '08', TownName: '文山區', X: '121570280', Y: '24989800' },
+            { TownID: '09', TownName: '南港區', X: '121607043', Y: '25054684' },
+            { TownID: '10', TownName: '內湖區', X: '121589471', Y: '25069353' },
+            { TownID: '11', TownName: '士林區', X: '121525380', Y: '25090430' },
+            { TownID: '12', TownName: '北投區', X: '121503066', Y: '25132054' } 
+        ]
         */
     })
 
@@ -137,6 +139,10 @@ ew.getStores({city: '台北市', town: '信義區', roadname: '永吉路'})
             },
         ]
         */
+    })
+ew.getStores({city: '台北市', town: '信義區', roadname: '忠孝東路五段'})
+    .then(stores => {
+        console.log('stores: ', stores)
     })
 ew.getStores({ID: '162520'})
     .then(stores => {

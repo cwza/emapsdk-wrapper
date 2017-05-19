@@ -124,7 +124,7 @@ describe('#api.getStores()', () => {
     it('should return stores by city and town and road or ID or StoreName', async () => {
         let tcs = {
             '台北市信義區永吉路': {city: '台北市', town: '信義區', roadname: '永吉路'},
-            '台北市信義區市府路': {city: '台北市', town: '信義區', roadname: '市府路'},
+            '台北市信義區市府路': {city: '台北市', town: '信義區', roadname: '忠孝東路五段'},
             '新北市中和區': {city: '新北市', town: '中和區'},
             '中錦': {StoreName: '中錦'},
             '162520': {ID: '162520'},
