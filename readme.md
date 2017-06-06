@@ -181,13 +181,6 @@ ew.getStores({city: '台北市', town: '信義區', roadname: '永吉路'})
     })
 ```
 
-## Input Params and Returns Type
-Please see [schema](lib/schema.js) for more information.  
-* townGeoSchema for getTowns(city) return value
-* roadNameSchema for getRoads(city, town) return value
-* storeGeoSchema for getStores(searchStoreParams) return value
-* searchStoreParamsSchema for getStores(searchStoreParams) input params
-
 ## ErrorType
 [errorType](lib/errorType.js)
 ``` js
@@ -198,8 +191,6 @@ ew.getStores({city: '台北市', town: '信義區', roadname: '永吉路'})
         console.log('stores: ', stores)
     })
     .catch(err => {
-        if err instanceof errorType.ValidationError
-            Console.log(err)
         if err instanceof errorType.HttpStatusError
             Console.log(err.statusCode, err)
         else
