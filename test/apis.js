@@ -1,7 +1,5 @@
 const apis = require('../').apis
 const expect = require('chai').expect
-const Joi = require('joi')
-const schema = require('../lib/schema')
 const errorType = require('../').errorType
 
 describe('#api.getCities()', () => {
@@ -42,9 +40,7 @@ describe('#api.getTowns()', () => {
             let actual = await apis.getTowns(tc.a)
             expect(actual, msg).to.not.empty
             actual.forEach((townGeo) => {
-                let result = Joi.validate(townGeo, schema.townGeoSchema)
-                expect(result.error, msg).to.be.null
-                
+                expect(townGeo, msg).to.not.empty
             })
         }
     })
@@ -87,9 +83,7 @@ describe('#api.getRoads()', () => {
             let actual = await apis.getRoads(tc.a, tc.b)
             expect(actual, msg).to.not.empty
             actual.forEach((roadName) => {
-                let result = Joi.validate(roadName, schema.roadNameSchema)
-                expect(result.error, msg).to.be.null
-                
+                expect(roadName, msg).to.not.empty
             })
         }
     })
@@ -133,9 +127,7 @@ describe('#api.getStores()', () => {
             let actual = await apis.getStores(tc)
             expect(actual, msg).to.not.empty
             actual.forEach((storeGeo) => {
-                let result = Joi.validate(storeGeo, schema.storeGeoSchema)
-                expect(result.error, msg).to.be.null
-                
+                expect(storeGeo, msg).to.not.empty
             })
         }
 
@@ -155,22 +147,6 @@ describe('#api.getStores()', () => {
             let actual = await apis.getStores(tc)
             expect(actual, msg).to.be.empty
         }
-    })
-    it('should throw ValidationError while searchStoreParams is invalid', async () => {
-        let tcs = {
-            'city: 123': {city: 123},
-        }
-        for (let [msg, tc] of Object.entries(tcs)) {
-            let error
-            try {
-                let actual = await apis.getStores(tc)
-            } catch(err) {
-                error = err
-            } finally {
-                expect(error, msg).to.be.instanceOf(errorType.ValidationError)
-            }
-        }
-
     })
     it('should throw HttpStatusError while 404', async () => {
         apis.config.emapsdkUrl = "http://emap.pcsc.com.tw/EMa"
